@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>RSO Audition Application</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="RSO Audition Application"
+        link rel="stylesheet" type="text/css" href="styles.css">
+        <body style="background-color:rgb(192, 201, 201)"></body>
+        <form name="submit-to-google-sheet">
+            <input name="email" type="email" placeholder="Email" required>
+            <button type="submit">Send</button>
+          </form>
+          
+          <script>
+            const scriptURL = '<https://script.google.com/macros/s/AKfycbxgwxOSMGq6SbexszwWz6Gf8JRoPxTvgR1zSNK5X4c8u_IAApoWvGBncA/exec>'
+            const form = document.forms['submit-to-google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+        <h1>RSO Audition Application</h1>  
+        <h3><a href="Audition Form.html">Auditions Home</a></h3>     
+      <img max-width="100px" height="50px" src="https://www.richmondsymphony.com/wp/wp-content/uploads/2017/09/Screen-Shot-2017-09-13-at-1.30.08-PM.png" alt="Please Complete All Areas Below"/>
+        <h3>Audition Application</h3>
+        <div>
+          <label>First Name</label>
+          <input type="text" name="form_field_1" placeholder="Field 1"/>
+        </div>
+      <p></p>
+        <div>
+          <label>Last Name</label>
+          <input type="text" name="form_field_2" placeholder="Field 2"/>
+        </div>
+        <p></p>
+        <div>
+          <label>Phone Number</label>
+          <input type="text" name="form_field_3" placeholder="Field 3"/>
+        </div>
+        <p></p>
+        <div>
+          <label>Email</label>
+          <input type="text" name="form_field_4" placeholder="Field 4"/>
+        </div>
+<p></p>
+        <div>
+            <label>Interested Position</label>
+            <input type="text" name="form_field_4" placeholder="Field 4"/>
+          </div>
+<p></p>
+        <div>
+           <label>Resume Upload</label>
+           <input type="file"/>
+        </div> 
+<p></p>
+        <div>
+          <button type="submit"id="submit-form">Submit</button>
+        </div>    
+      </form>
